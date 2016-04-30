@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		066992536BF368159259F81D /* Pods_PicassoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47D10343D857E988F324FD3F /* Pods_PicassoUITests.framework */; };
+		703CAA3B2E1B07DFFFE7A777 /* Pods_PicassoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812CF0B9FBBC8AD5A3D57B05 /* Pods_PicassoTests.framework */; };
 		B6094B761CD56DF100FEA5C5 /* GalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6094B751CD56DF100FEA5C5 /* GalleryCell.swift */; };
 		E28938A61CD5188100A0E075 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28938A51CD5188100A0E075 /* AppDelegate.swift */; };
 		E28938A81CD5188100A0E075 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28938A71CD5188100A0E075 /* ViewController.swift */; };
@@ -19,6 +21,7 @@
 		E28938D61CD5267E00A0E075 /* MergeImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28938D51CD5267E00A0E075 /* MergeImagesViewController.swift */; };
 		E28938D81CD5268E00A0E075 /* FinishedMergingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28938D71CD5268E00A0E075 /* FinishedMergingViewController.swift */; };
 		E28938DA1CD5310E00A0E075 /* PickImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28938D91CD5310E00A0E075 /* PickImageViewController.swift */; };
+		E79C73C21F993F660451779A /* Pods_Picasso.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBBFFA5F278316431CF10331 /* Pods_Picasso.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +42,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0CAB3D4D00551FD9065FA8A0 /* Pods-Picasso.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Picasso.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Picasso/Pods-Picasso.debug.xcconfig"; sourceTree = "<group>"; };
+		19253967A108FE2B0E304C05 /* Pods-PicassoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PicassoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PicassoTests/Pods-PicassoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2C4571D0DF0A89AD73ED6E4E /* Pods-PicassoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PicassoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PicassoUITests/Pods-PicassoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		47D10343D857E988F324FD3F /* Pods_PicassoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PicassoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78327A360D9B07CDCD5E1297 /* Pods-Picasso.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Picasso.release.xcconfig"; path = "Pods/Target Support Files/Pods-Picasso/Pods-Picasso.release.xcconfig"; sourceTree = "<group>"; };
+		812CF0B9FBBC8AD5A3D57B05 /* Pods_PicassoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PicassoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB62C91FAEB54AEF29D565AF /* Pods-PicassoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PicassoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PicassoTests/Pods-PicassoTests.release.xcconfig"; sourceTree = "<group>"; };
 		B6094B751CD56DF100FEA5C5 /* GalleryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryCell.swift; sourceTree = "<group>"; };
+		CBBFFA5F278316431CF10331 /* Pods_Picasso.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Picasso.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E28938A21CD5188100A0E075 /* Picasso.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Picasso.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E28938A51CD5188100A0E075 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E28938A71CD5188100A0E075 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +68,7 @@
 		E28938D51CD5267E00A0E075 /* MergeImagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MergeImagesViewController.swift; sourceTree = "<group>"; };
 		E28938D71CD5268E00A0E075 /* FinishedMergingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishedMergingViewController.swift; sourceTree = "<group>"; };
 		E28938D91CD5310E00A0E075 /* PickImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickImageViewController.swift; sourceTree = "<group>"; };
+		F15B560DF55733F1228E90DD /* Pods-PicassoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PicassoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PicassoUITests/Pods-PicassoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E79C73C21F993F660451779A /* Pods_Picasso.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				703CAA3B2E1B07DFFFE7A777 /* Pods_PicassoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,12 +92,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				066992536BF368159259F81D /* Pods_PicassoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7386DDE14F13B6D17B6E2153 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0CAB3D4D00551FD9065FA8A0 /* Pods-Picasso.debug.xcconfig */,
+				78327A360D9B07CDCD5E1297 /* Pods-Picasso.release.xcconfig */,
+				19253967A108FE2B0E304C05 /* Pods-PicassoTests.debug.xcconfig */,
+				AB62C91FAEB54AEF29D565AF /* Pods-PicassoTests.release.xcconfig */,
+				F15B560DF55733F1228E90DD /* Pods-PicassoUITests.debug.xcconfig */,
+				2C4571D0DF0A89AD73ED6E4E /* Pods-PicassoUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		857EE8A849F35726CB0EFE4A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CBBFFA5F278316431CF10331 /* Pods_Picasso.framework */,
+				812CF0B9FBBC8AD5A3D57B05 /* Pods_PicassoTests.framework */,
+				47D10343D857E988F324FD3F /* Pods_PicassoUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E28938991CD5188100A0E075 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +129,8 @@
 				E28938B91CD5188100A0E075 /* PicassoTests */,
 				E28938C41CD5188100A0E075 /* PicassoUITests */,
 				E28938A31CD5188100A0E075 /* Products */,
+				7386DDE14F13B6D17B6E2153 /* Pods */,
+				857EE8A849F35726CB0EFE4A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,9 +187,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E28938CA1CD5188100A0E075 /* Build configuration list for PBXNativeTarget "Picasso" */;
 			buildPhases = (
+				1D2AD910C2A8DCA7F34EFA76 /* 📦 Check Pods Manifest.lock */,
 				E289389E1CD5188100A0E075 /* Sources */,
 				E289389F1CD5188100A0E075 /* Frameworks */,
 				E28938A01CD5188100A0E075 /* Resources */,
+				7A40243C858EF001C8009157 /* 📦 Embed Pods Frameworks */,
+				BD068A8FFAB144D362962E04 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -164,9 +207,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E28938CD1CD5188100A0E075 /* Build configuration list for PBXNativeTarget "PicassoTests" */;
 			buildPhases = (
+				8A41F8CC4E6824CA325D5FDB /* 📦 Check Pods Manifest.lock */,
 				E28938B21CD5188100A0E075 /* Sources */,
 				E28938B31CD5188100A0E075 /* Frameworks */,
 				E28938B41CD5188100A0E075 /* Resources */,
+				693F5331F3C996298EA2BD27 /* 📦 Embed Pods Frameworks */,
+				1123EA3B4A8D4BD723B51ADE /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -182,9 +228,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E28938D01CD5188100A0E075 /* Build configuration list for PBXNativeTarget "PicassoUITests" */;
 			buildPhases = (
+				14A1595825AA589CEDFD057D /* 📦 Check Pods Manifest.lock */,
 				E28938BD1CD5188100A0E075 /* Sources */,
 				E28938BE1CD5188100A0E075 /* Frameworks */,
 				E28938BF1CD5188100A0E075 /* Resources */,
+				DD58E08E819E00F7BED24583 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -266,6 +314,129 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1123EA3B4A8D4BD723B51ADE /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PicassoTests/Pods-PicassoTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		14A1595825AA589CEDFD057D /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		1D2AD910C2A8DCA7F34EFA76 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		693F5331F3C996298EA2BD27 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PicassoTests/Pods-PicassoTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A40243C858EF001C8009157 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Picasso/Pods-Picasso-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8A41F8CC4E6824CA325D5FDB /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BD068A8FFAB144D362962E04 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Picasso/Pods-Picasso-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD58E08E819E00F7BED24583 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PicassoUITests/Pods-PicassoUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E289389E1CD5188100A0E075 /* Sources */ = {
@@ -418,6 +589,7 @@
 		};
 		E28938CB1CD5188100A0E075 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CAB3D4D00551FD9065FA8A0 /* Pods-Picasso.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -430,6 +602,7 @@
 		};
 		E28938CC1CD5188100A0E075 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78327A360D9B07CDCD5E1297 /* Pods-Picasso.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -442,6 +615,7 @@
 		};
 		E28938CE1CD5188100A0E075 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19253967A108FE2B0E304C05 /* Pods-PicassoTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = PicassoTests/Info.plist;
@@ -454,6 +628,7 @@
 		};
 		E28938CF1CD5188100A0E075 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB62C91FAEB54AEF29D565AF /* Pods-PicassoTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = PicassoTests/Info.plist;
@@ -466,6 +641,7 @@
 		};
 		E28938D11CD5188100A0E075 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F15B560DF55733F1228E90DD /* Pods-PicassoUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = PicassoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -478,6 +654,7 @@
 		};
 		E28938D21CD5188100A0E075 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C4571D0DF0A89AD73ED6E4E /* Pods-PicassoUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = PicassoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
