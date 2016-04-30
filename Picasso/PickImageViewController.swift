@@ -100,7 +100,6 @@ class PickImageViewController: UIViewController, UIImagePickerControllerDelegate
                     }
                     NSFileManager.defaultManager().createFileAtPath(savePath, contents: data, attributes: nil)
                     //self.SelectedImage.image = UIImage(named: savePath)
-                    print("saved")
                     self.urlImageActive = true
                     self.ConfirmCancelButton.setTitle("Confirm", forState: .Normal)
                 }

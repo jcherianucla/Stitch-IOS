@@ -36,14 +36,15 @@ class MergeImagesViewController: UIViewController {
             print("Coming from Pick Image Screen")
             print("Is bottom image active?"); print(pickImageViewController.bottomImageActive)
             print("Is top image active?"); print(pickImageViewController.topImageActive)
-            if(topImageActive){
+            print("Is url image active?"); print(pickImageViewController.urlImageActive)
+            if(pickImageViewController.topImageActive){
                 if pickImageViewController.urlImageActive {
                     TopImage.image = retrieveURLSavedImage(true)
                 } else {
                     
                 }
             }
-            else if (bottomImageActive){
+            else if (pickImageViewController.bottomImageActive){
                 if pickImageViewController.urlImageActive {
                     BottomImage.image = retrieveURLSavedImage(false)
                 } else {
@@ -63,6 +64,7 @@ class MergeImagesViewController: UIViewController {
             }
             else {
                 let savePath = documentsDirectory! + "/bottom_downloaded_image.jpg"
+                print(savePath)
                 return UIImage(named: savePath)!
             }
         }
