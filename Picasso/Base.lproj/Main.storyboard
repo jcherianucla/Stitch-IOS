@@ -20,6 +20,7 @@
             <string>HelveticaNeue</string>
             <string>HelveticaNeue</string>
             <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -150,6 +151,98 @@
             </objects>
             <point key="canvasLocation" x="234" y="299"/>
         </scene>
+        <!--Pick Image View Controller-->
+        <scene sceneID="F7E-57-Go0">
+            <objects>
+                <viewController id="ocz-71-gHz" customClass="PickImageViewController" customModule="Picasso" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6WY-Hi-52B"/>
+                        <viewControllerLayoutGuide type="bottom" id="6EQ-xf-Agv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qAk-wx-jrF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yJF-0U-4NH">
+                                <rect key="frame" x="0.0" y="360" width="600" height="240"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u2D-MN-MKf" userLabel="CameraPicker">
+                                        <rect key="frame" x="142" y="42" width="96" height="96"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="u2D-MN-MKf" secondAttribute="height" multiplier="1:1" id="d4b-64-LN8"/>
+                                        </constraints>
+                                        <state key="normal" image="camera_icon"/>
+                                        <connections>
+                                            <action selector="CameraPressed:" destination="ocz-71-gHz" eventType="touchUpInside" id="CeG-v7-H1x"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rbv-kf-OUS" userLabel="Separtor">
+                                        <rect key="frame" x="298" y="30.5" width="4.5" height="120"/>
+                                        <color key="backgroundColor" red="0.039215686270000001" green="0.1333333333" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BEi-Di-izv" userLabel="ConfirmButton">
+                                        <rect key="frame" x="150" y="180" width="300" height="36"/>
+                                        <color key="backgroundColor" red="0.12941176469999999" green="0.43921568630000002" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="ConfirmCancelPressed:" destination="ocz-71-gHz" eventType="touchUpInside" id="iHq-9a-Y9J"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9oq-bX-a3w" userLabel="UrlPicker">
+                                        <rect key="frame" x="355.5" y="42.5" width="96" height="96"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="9oq-bX-a3w" secondAttribute="height" multiplier="1:1" id="fe6-37-9nx"/>
+                                        </constraints>
+                                        <state key="normal" image="link_icon"/>
+                                        <connections>
+                                            <action selector="UrlPressed:" destination="ocz-71-gHz" eventType="touchUpInside" id="vIK-o1-v62"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="BEi-Di-izv" firstAttribute="centerX" secondItem="yJF-0U-4NH" secondAttribute="centerX" id="2OM-ef-D2o"/>
+                                    <constraint firstItem="Rbv-kf-OUS" firstAttribute="width" secondItem="yJF-0U-4NH" secondAttribute="width" multiplier="0.0075" id="9Gf-fz-gpe"/>
+                                    <constraint firstItem="9oq-bX-a3w" firstAttribute="centerY" secondItem="Rbv-kf-OUS" secondAttribute="centerY" id="FdK-nt-F7q"/>
+                                    <constraint firstItem="Rbv-kf-OUS" firstAttribute="centerX" secondItem="yJF-0U-4NH" secondAttribute="centerX" id="Hev-2K-FD4"/>
+                                    <constraint firstItem="Rbv-kf-OUS" firstAttribute="height" secondItem="yJF-0U-4NH" secondAttribute="height" multiplier="0.5" id="Jnl-It-rVK"/>
+                                    <constraint firstItem="9oq-bX-a3w" firstAttribute="leading" secondItem="Rbv-kf-OUS" secondAttribute="trailing" multiplier="10:8.5" id="N2Z-75-k68"/>
+                                    <constraint firstItem="9oq-bX-a3w" firstAttribute="height" secondItem="u2D-MN-MKf" secondAttribute="height" id="NTX-3B-m7t"/>
+                                    <constraint firstItem="Rbv-kf-OUS" firstAttribute="centerY" secondItem="yJF-0U-4NH" secondAttribute="centerY" multiplier="3:4" id="ZGm-v2-xKR"/>
+                                    <constraint firstItem="u2D-MN-MKf" firstAttribute="height" secondItem="yJF-0U-4NH" secondAttribute="height" multiplier="0.4" id="d6x-ce-V5v"/>
+                                    <constraint firstItem="Rbv-kf-OUS" firstAttribute="leading" secondItem="u2D-MN-MKf" secondAttribute="trailing" multiplier="10:8" id="hZc-B5-Edf"/>
+                                    <constraint firstItem="BEi-Di-izv" firstAttribute="width" secondItem="yJF-0U-4NH" secondAttribute="width" multiplier="0.5" id="jKD-jc-IWa"/>
+                                    <constraint firstAttribute="bottom" secondItem="BEi-Di-izv" secondAttribute="bottom" multiplier="10:9" id="qpz-jC-SBS"/>
+                                    <constraint firstItem="u2D-MN-MKf" firstAttribute="centerY" secondItem="Rbv-kf-OUS" secondAttribute="centerY" id="rIB-Ga-wOj"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d52-TB-DgZ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="360"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.039215686270000001" green="0.1333333333" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="yJF-0U-4NH" firstAttribute="width" secondItem="qAk-wx-jrF" secondAttribute="width" id="2lF-Ao-G4w"/>
+                            <constraint firstItem="6EQ-xf-Agv" firstAttribute="top" secondItem="yJF-0U-4NH" secondAttribute="bottom" id="6yE-OS-MKS"/>
+                            <constraint firstItem="yJF-0U-4NH" firstAttribute="height" secondItem="qAk-wx-jrF" secondAttribute="height" multiplier="0.4" id="8RW-ej-uAq"/>
+                            <constraint firstItem="yJF-0U-4NH" firstAttribute="centerX" secondItem="qAk-wx-jrF" secondAttribute="centerX" id="G5m-Rg-51a"/>
+                            <constraint firstItem="yJF-0U-4NH" firstAttribute="top" secondItem="d52-TB-DgZ" secondAttribute="bottom" id="NtN-tD-cra"/>
+                            <constraint firstItem="d52-TB-DgZ" firstAttribute="width" secondItem="qAk-wx-jrF" secondAttribute="width" id="WPW-Ba-Cex"/>
+                            <constraint firstItem="d52-TB-DgZ" firstAttribute="height" secondItem="qAk-wx-jrF" secondAttribute="height" multiplier="0.6" id="lKh-NY-v5i"/>
+                            <constraint firstItem="d52-TB-DgZ" firstAttribute="centerX" secondItem="qAk-wx-jrF" secondAttribute="centerX" id="uep-KR-Mex"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ConfirmCancelButton" destination="BEi-Di-izv" id="WHQ-aE-n6u"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LpV-kB-6Ib" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1803" y="-825"/>
+        </scene>
         <!--Merge Images View Controller-->
         <scene sceneID="3fY-T2-O4L">
             <objects>
@@ -177,14 +270,14 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2n3-rt-dr9" userLabel="Seperator">
-                                <rect key="frame" x="0.0" y="297" width="600" height="6"/>
+                                <rect key="frame" x="0.0" y="298" width="600" height="4.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white_outline_bg" translatesAutoresizingMaskIntoConstraints="NO" id="0bT-rE-Vxz" userLabel="ButtonBG">
-                                <rect key="frame" x="180" y="47" width="240" height="42"/>
+                                <rect key="frame" x="180" y="47.5" width="240" height="42"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SUY-68-IuC" userLabel="AddTopImageButton">
-                                <rect key="frame" x="180" y="47" width="240" height="42"/>
+                                <rect key="frame" x="180" y="47.5" width="240" height="42"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
                                 <state key="normal" title="Add Image">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -194,10 +287,10 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white_outline_bg" translatesAutoresizingMaskIntoConstraints="NO" id="hKV-pJ-aJo" userLabel="ButtonBG">
-                                <rect key="frame" x="180" y="505" width="240" height="42"/>
+                                <rect key="frame" x="180" y="504" width="240" height="42"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GOu-Dg-d4j" userLabel="AddBottomImageButton">
-                                <rect key="frame" x="180" y="505" width="240" height="42"/>
+                                <rect key="frame" x="180" y="504" width="240" height="42"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
                                 <state key="normal" title="Add Image">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -240,7 +333,7 @@
                             <constraint firstItem="GOu-Dg-d4j" firstAttribute="width" secondItem="VmI-MT-BiT" secondAttribute="width" multiplier="0.4" id="UyK-0H-Kvd"/>
                             <constraint firstItem="0bT-rE-Vxz" firstAttribute="centerX" secondItem="SUY-68-IuC" secondAttribute="centerX" id="VKN-Xy-xR8"/>
                             <constraint firstItem="SUY-68-IuC" firstAttribute="centerX" secondItem="VmI-MT-BiT" secondAttribute="centerX" id="Ve5-7n-qn0"/>
-                            <constraint firstItem="2n3-rt-dr9" firstAttribute="height" secondItem="VmI-MT-BiT" secondAttribute="height" multiplier="0.01" id="W0K-Wt-pWw"/>
+                            <constraint firstItem="2n3-rt-dr9" firstAttribute="height" secondItem="VmI-MT-BiT" secondAttribute="height" multiplier="0.0075" id="W0K-Wt-pWw"/>
                             <constraint firstItem="GOu-Dg-d4j" firstAttribute="centerX" secondItem="VmI-MT-BiT" secondAttribute="centerX" id="ZdX-AB-1wn"/>
                             <constraint firstItem="ZgM-eH-ahg" firstAttribute="centerX" secondItem="VmI-MT-BiT" secondAttribute="centerX" id="aMe-D3-QNJ"/>
                             <constraint firstItem="SUY-68-IuC" firstAttribute="width" secondItem="VmI-MT-BiT" secondAttribute="width" multiplier="0.4" id="d6D-ph-QBw"/>
@@ -265,6 +358,7 @@
                         <outlet property="TopButton" destination="SUY-68-IuC" id="Xbj-EJ-PiV"/>
                         <outlet property="TopImage" destination="ZgM-eH-ahg" id="RL2-Ew-lUk"/>
                         <segue destination="dA3-6B-nsN" kind="show" identifier="showMergedImage" id="GGT-nH-7Yf"/>
+                        <segue destination="ocz-71-gHz" kind="show" identifier="showImagePicker" id="eBW-jZ-0Yz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GJ9-Mn-acN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -469,8 +563,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="camera_icon" width="99" height="99"/>
         <image name="facebook_icon" width="100" height="100"/>
         <image name="google_plus_icon" width="100" height="100"/>
+        <image name="link_icon" width="99" height="99"/>
         <image name="merge_icon" width="99" height="99"/>
         <image name="picasso_bg" width="1242" height="2208"/>
         <image name="twitter_icon" width="100" height="100"/>

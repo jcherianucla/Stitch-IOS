@@ -17,6 +17,7 @@
 		E28938D41CD51E4400A0E075 /* GalleryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28938D31CD51E4400A0E075 /* GalleryTableViewController.swift */; };
 		E28938D61CD5267E00A0E075 /* MergeImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28938D51CD5267E00A0E075 /* MergeImagesViewController.swift */; };
 		E28938D81CD5268E00A0E075 /* FinishedMergingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28938D71CD5268E00A0E075 /* FinishedMergingViewController.swift */; };
+		E28938DA1CD5310E00A0E075 /* PickImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28938D91CD5310E00A0E075 /* PickImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		E28938D31CD51E4400A0E075 /* GalleryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryTableViewController.swift; sourceTree = "<group>"; };
 		E28938D51CD5267E00A0E075 /* MergeImagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MergeImagesViewController.swift; sourceTree = "<group>"; };
 		E28938D71CD5268E00A0E075 /* FinishedMergingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishedMergingViewController.swift; sourceTree = "<group>"; };
+		E28938D91CD5310E00A0E075 /* PickImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				E28938A51CD5188100A0E075 /* AppDelegate.swift */,
 				E28938A71CD5188100A0E075 /* ViewController.swift */,
 				E28938A91CD5188100A0E075 /* Main.storyboard */,
+				E28938D91CD5310E00A0E075 /* PickImageViewController.swift */,
 				E28938D51CD5267E00A0E075 /* MergeImagesViewController.swift */,
 				E28938D71CD5268E00A0E075 /* FinishedMergingViewController.swift */,
 				E28938D31CD51E4400A0E075 /* GalleryTableViewController.swift */,
@@ -268,6 +271,7 @@
 				E28938D41CD51E4400A0E075 /* GalleryTableViewController.swift in Sources */,
 				E28938D81CD5268E00A0E075 /* FinishedMergingViewController.swift in Sources */,
 				E28938A81CD5188100A0E075 /* ViewController.swift in Sources */,
+				E28938DA1CD5310E00A0E075 /* PickImageViewController.swift in Sources */,
 				E28938A61CD5188100A0E075 /* AppDelegate.swift in Sources */,
 				E28938D61CD5267E00A0E075 /* MergeImagesViewController.swift in Sources */,
 			);
@@ -496,6 +500,7 @@
 				E28938CC1CD5188100A0E075 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E28938CD1CD5188100A0E075 /* Build configuration list for PBXNativeTarget "PicassoTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +509,7 @@
 				E28938CF1CD5188100A0E075 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E28938D01CD5188100A0E075 /* Build configuration list for PBXNativeTarget "PicassoUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +518,7 @@
 				E28938D21CD5188100A0E075 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

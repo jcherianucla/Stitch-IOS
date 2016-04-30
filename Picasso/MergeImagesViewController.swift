@@ -29,10 +29,10 @@ class MergeImagesViewController: UIViewController {
     }
     
     @IBAction func TopPressed(sender: AnyObject) {
-        
+        performSegueWithIdentifier("showImagePicker", sender: self)
     }
     @IBAction func BottomPressed(sender: AnyObject) {
-        
+        performSegueWithIdentifier("showImagePicker", sender: self)
     }
     @IBAction func MergePressed(sender: AnyObject) {
         performSegueWithIdentifier("showMergedImage", sender: self)
