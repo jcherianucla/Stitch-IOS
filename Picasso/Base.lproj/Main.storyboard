@@ -237,6 +237,7 @@
                     </view>
                     <connections>
                         <outlet property="ConfirmCancelButton" destination="BEi-Di-izv" id="WHQ-aE-n6u"/>
+                        <outlet property="SelectedImage" destination="d52-TB-DgZ" id="0Sf-pa-gNF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LpV-kB-6Ib" userLabel="First Responder" sceneMemberID="firstResponder"/>
