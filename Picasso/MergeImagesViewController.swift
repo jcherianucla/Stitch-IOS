@@ -38,22 +38,14 @@ class MergeImagesViewController: UIViewController {
             print("Is top image active?"); print(pickImageViewController.topImageActive)
             print("Is url image active?"); print(pickImageViewController.urlImageActive)
             if(pickImageViewController.topImageActive){
-                if pickImageViewController.urlImageActive {
-                    TopImage.image = retrieveURLSavedImage(true)
-                } else {
-                    
-                }
+                TopImage.image = retrieveSavedImage(true)
             }
             else if (pickImageViewController.bottomImageActive){
-                if pickImageViewController.urlImageActive {
-                    BottomImage.image = retrieveURLSavedImage(false)
-                } else {
-                    
-                }
+                BottomImage.image = retrieveSavedImage(false)
             }
         }
     }
-    func retrieveURLSavedImage(top: Bool) -> UIImage{
+    func retrieveSavedImage(top: Bool) -> UIImage{
         var documentsDirectory:String?
         var paths:[AnyObject] = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask,  true)
         if paths.count > 0 {
@@ -64,7 +56,6 @@ class MergeImagesViewController: UIViewController {
             }
             else {
                 let savePath = documentsDirectory! + "/bottom_downloaded_image.jpg"
-                print(savePath)
                 return UIImage(named: savePath)!
             }
         }

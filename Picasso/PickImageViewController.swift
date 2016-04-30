@@ -44,9 +44,23 @@ class PickImageViewController: UIViewController, UIImagePickerControllerDelegate
     func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!){
         self.dismissViewControllerAnimated(true, completion: { () -> Void in
             self.urlImageActive = false
-            self.ConfirmCancelButton.setTitle("Confirm", forState: .Normal)
+            self.SelectedImage.image = image
+            var documentsDirectory:String?
+            var paths:[AnyObject] = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask,  true)
+            if paths.count > 0 {
+                documentsDirectory = paths[0] as? String
+                var savePath: String = ""
+                if self.topImageActive {
+                    savePath = documentsDirectory! + "/top_downloaded_image.jpg"
+                }
+                else {
+                    savePath = documentsDirectory! + "/bottom_downloaded_image.jpg"
+                }
+                NSFileManager.defaultManager().createFileAtPath(savePath, contents: UIImageJPEGRepresentation(image, 1.0), attributes: nil)
+                //self.SelectedImage.image = UIImage(named: savePath)
+                self.ConfirmCancelButton.setTitle("Confirm", forState: .Normal)
+            }
         })
-        SelectedImage.image = image
     }
     @IBAction func UrlPressed(sender: AnyObject) {
         let alert = UIAlertController(title: "Web Image", message: "Provide URL to choose an image on the web.", preferredStyle: UIAlertControllerStyle.Alert)
