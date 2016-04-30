@@ -45,21 +45,22 @@ class MergeImagesViewController: UIViewController {
             }
         }
     }
-    func retrieveSavedImage(top: Bool) -> UIImage{
-        var documentsDirectory:String?
-        var paths:[AnyObject] = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask,  true)
-        if paths.count > 0 {
-            documentsDirectory = paths[0] as? String
-            if top {
-                let savePath = documentsDirectory! + "/top_downloaded_image.jpg"
-                return UIImage(named: savePath)!
-            }
-            else {
-                let savePath = documentsDirectory! + "/bottom_downloaded_image.jpg"
-                return UIImage(named: savePath)!
-            }
+    func getDocumentsDirectory() -> NSString {
+        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+        let documentsDirectory = paths[0]
+        return documentsDirectory
+    }
+    func retrieveSavedImage(top : Bool) -> UIImage? {
+        // Get file path poining to documents directory
+        let filePath: String
+        if top {
+            filePath = self.getDocumentsDirectory().stringByAppendingPathComponent("/top_downloaded_image.jpg")
         }
-        return UIImage()
+        else {
+            filePath = self.getDocumentsDirectory().stringByAppendingPathComponent("/bottom_downloaded_image.jpg")
+        }
+        // Get image from file on given local url
+        return UIImage(contentsOfFile: filePath)
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showImagePicker" {

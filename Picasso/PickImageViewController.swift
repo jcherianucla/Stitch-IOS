@@ -45,21 +45,9 @@ class PickImageViewController: UIViewController, UIImagePickerControllerDelegate
         self.dismissViewControllerAnimated(true, completion: { () -> Void in
             self.urlImageActive = false
             self.SelectedImage.image = image
-            var documentsDirectory:String?
-            var paths:[AnyObject] = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask,  true)
-            if paths.count > 0 {
-                documentsDirectory = paths[0] as? String
-                var savePath: String = ""
-                if self.topImageActive {
-                    savePath = documentsDirectory! + "/top_downloaded_image.jpg"
-                }
-                else {
-                    savePath = documentsDirectory! + "/bottom_downloaded_image.jpg"
-                }
-                NSFileManager.defaultManager().createFileAtPath(savePath, contents: UIImageJPEGRepresentation(image, 1.0), attributes: nil)
-                //self.SelectedImage.image = UIImage(named: savePath)
-                self.ConfirmCancelButton.setTitle("Confirm", forState: .Normal)
-            }
+            self.saveOverrideImage(UIImageJPEGRepresentation(image, 1.0)!)
+            self.urlImageActive = true
+            self.ConfirmCancelButton.setTitle("Confirm", forState: .Normal)
         })
     }
     @IBAction func UrlPressed(sender: AnyObject) {
@@ -101,25 +89,49 @@ class PickImageViewController: UIViewController, UIImagePickerControllerDelegate
                 self.SelectedImage.image = image
                 
                 //lets save the image instead and after the first time you wont need to download it anymore
-                var documentsDirectory:String?
-                var paths:[AnyObject] = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask,  true)
-                if paths.count > 0 {
-                    documentsDirectory = paths[0] as? String
-                    var savePath: String = ""
-                    if self.topImageActive {
-                        savePath = documentsDirectory! + "/top_downloaded_image.jpg"
-                    }
-                    else {
-                        savePath = documentsDirectory! + "/bottom_downloaded_image.jpg"
-                    }
-                    NSFileManager.defaultManager().createFileAtPath(savePath, contents: data, attributes: nil)
-                    //self.SelectedImage.image = UIImage(named: savePath)
-                    self.urlImageActive = true
-                    self.ConfirmCancelButton.setTitle("Confirm", forState: .Normal)
-                }
+                self.saveOverrideImage(data!)
+                self.urlImageActive = true
+                self.ConfirmCancelButton.setTitle("Confirm", forState: .Normal)
             }
             
         })
     }
-
+    func saveOverrideImage(data : NSData) {
+        
+        // Get file path poining to documents directory
+        let filePath: String
+        let stickerUsed: String
+        if self.topImageActive {
+            filePath = self.getDocumentsDirectory().stringByAppendingPathComponent("/top_downloaded_image.jpg")
+            stickerUsed = "/top_downloaded_image.jpg"
+        }
+        else {
+            filePath = self.getDocumentsDirectory().stringByAppendingPathComponent("/bottom_downloaded_image.jpg")
+            stickerUsed = "/bottom_downloaded_image.jpg"
+        }
+        
+        // We could try if there is file in this path (.fileExistsAtPath())
+        // BUT we can also just call delete function, because it checks by itself
+        do {
+            try NSFileManager.defaultManager().removeItemAtPath(filePath)
+        }
+        catch _ {
+            print("Did not accurately remove image")
+        }
+        
+        
+        // Write new image
+        data.writeToFile(filePath, atomically: true)
+        
+        // Save your stuff to
+        NSUserDefaults.standardUserDefaults().setObject(filePath, forKey: stickerUsed)
+        NSUserDefaults.standardUserDefaults().synchronize()
+    }
+    
+    func getDocumentsDirectory() -> NSString {
+        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+        let documentsDirectory = paths[0]
+        return documentsDirectory
+    }
+    
 }
