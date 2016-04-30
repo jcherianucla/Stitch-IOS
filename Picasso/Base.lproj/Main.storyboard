@@ -189,6 +189,7 @@
                                         </state>
                                         <connections>
                                             <action selector="ConfirmCancelPressed:" destination="ocz-71-gHz" eventType="touchUpInside" id="iHq-9a-Y9J"/>
+                                            <segue destination="HqN-tj-9k6" kind="unwind" identifier="unwindToMergeImagesView" animates="NO" unwindAction="unwindToMergeImagesView:" id="Y1T-GY-CzX"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9oq-bX-a3w" userLabel="UrlPicker">
@@ -241,6 +242,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LpV-kB-6Ib" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="HqN-tj-9k6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1803" y="-825"/>
         </scene>
@@ -262,11 +264,11 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZgM-eH-ahg" userLabel="TopImage">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
                             </imageView>
-                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NNw-M4-ABO" userLabel="BottomImageShadow">
+                            <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NNw-M4-ABO" userLabel="BottomImageShadow">
                                 <rect key="frame" x="0.0" y="300" width="600" height="300"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zho-zz-h2t" userLabel="TopImageShadow">
+                            <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zho-zz-h2t" userLabel="TopImageShadow">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>

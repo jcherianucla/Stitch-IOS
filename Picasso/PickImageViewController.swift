@@ -15,11 +15,18 @@ class PickImageViewController: UIViewController, UIImagePickerControllerDelegate
     
     var imagePicker = UIImagePickerController()
     var textfield: UITextField? = nil
-    
+    var topImageActive: Bool = false
+    var bottomImageActive: Bool = false
+    var urlImageActive: Bool = false
+
     override func viewDidLoad() {
         super.viewDidLoad()
         ConfirmCancelButton.layer.cornerRadius = 15
         imagePicker.delegate = self
+    }
+    func setBottomAndTop(bottom: Bool, top: Bool){
+        self.bottomImageActive = bottom
+        self.topImageActive = top
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,6 +43,7 @@ class PickImageViewController: UIViewController, UIImagePickerControllerDelegate
     }
     func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!){
         self.dismissViewControllerAnimated(true, completion: { () -> Void in
+            self.urlImageActive = false
             self.ConfirmCancelButton.setTitle("Confirm", forState: .Normal)
         })
         SelectedImage.image = image
@@ -56,7 +64,9 @@ class PickImageViewController: UIViewController, UIImagePickerControllerDelegate
         self.presentViewController(alert, animated: true, completion: nil)
     }
     @IBAction func ConfirmCancelPressed(sender: AnyObject) {
-        self.presentingViewController!.dismissViewControllerAnimated(false, completion: nil)
+    }
+    @IBAction func unwindToMergeImagesView(segue: UIStoryboardSegue) {
+        
     }
     func downloadImage (providedURL: String) {
         
@@ -74,16 +84,24 @@ class PickImageViewController: UIViewController, UIImagePickerControllerDelegate
             else {
                 let image = UIImage(data: data!)
                 //to set image directly
-                //self.SelectedImage.image = image
+                self.SelectedImage.image = image
                 
                 //lets save the image instead and after the first time you wont need to download it anymore
                 var documentsDirectory:String?
                 var paths:[AnyObject] = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask,  true)
                 if paths.count > 0 {
                     documentsDirectory = paths[0] as? String
-                    var savePath = documentsDirectory! + "/downloaded_image.jpg"
+                    var savePath: String = ""
+                    if self.topImageActive {
+                        savePath = documentsDirectory! + "/top_downloaded_image.jpg"
+                    }
+                    else {
+                        savePath = documentsDirectory! + "/bottom_downloaded_image.jpg"
+                    }
                     NSFileManager.defaultManager().createFileAtPath(savePath, contents: data, attributes: nil)
-                    self.SelectedImage.image = UIImage(named: savePath)
+                    //self.SelectedImage.image = UIImage(named: savePath)
+                    print("saved")
+                    self.urlImageActive = true
                     self.ConfirmCancelButton.setTitle("Confirm", forState: .Normal)
                 }
             }
