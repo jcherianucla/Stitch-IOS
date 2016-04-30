@@ -9,6 +9,21 @@
 import UIKit
 
 class GalleryTableViewController: UITableViewController {
+    
+    //DEMO VARIABLES - Specified names are loaded
+    var gallery = [UIImage]()
+    var imageNames:[String] = ["deep_omar","deep_ali", "deep_jahan", "deep_emilia", "deep_mylo", "deep_venice", "deep_beard", "deep_bear", "deep_amanda", "deep_jahan"]
+    
+    
+    //DEMO CODE - Loads images statically from the Assets folder
+    func loadImages()
+    {
+        for imageString in self.imageNames
+        {
+            let image:UIImage = UIImage(named: imageString)!
+            gallery.append(image)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +49,7 @@ class GalleryTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 6
+        return gallery.count
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -43,9 +58,11 @@ class GalleryTableViewController: UITableViewController {
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! GalleryCell
 
         // Configure the cell...
+        
+        cell.loadData("04/30/2016", image: gallery[indexPath.row])
 
         return cell
     }
