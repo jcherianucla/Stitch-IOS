@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import Photos
 
 class PickImageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+    
     @IBOutlet var ConfirmCancelButton: UIButton!
     @IBOutlet var SelectedImage: UIImageView!
     
@@ -18,20 +19,39 @@ class PickImageViewController: UIViewController, UIImagePickerControllerDelegate
     var topImageActive: Bool = false
     var bottomImageActive: Bool = false
     var urlImageActive: Bool = false
-
+    var allow:Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         ConfirmCancelButton.layer.cornerRadius = 15
         imagePicker.delegate = self
+        PHPhotoLibrary.requestAuthorization { status in
+            switch status {
+            case .Authorized:
+                self.allow = true
+            case .Restricted:
+                break;
+            case .Denied:
+                break;
+            default:
+                // place for .NotDetermined - in this callback status is already determined so should never get here
+                break
+            }
+        }
     }
     func setBottomAndTop(bottom: Bool, top: Bool){
         self.bottomImageActive = bottom
         self.topImageActive = top
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func isSourceTypeAvailable(sourceType: UIImagePickerControllerSourceType) -> Bool
+    {
+        return true
     }
     
     @IBAction func CameraPressed(sender: AnyObject) {
@@ -41,14 +61,20 @@ class PickImageViewController: UIViewController, UIImagePickerControllerDelegate
             self.presentViewController(imagePicker, animated: true, completion: nil)
         }
     }
+    
+    
+    
     func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!){
-        self.dismissViewControllerAnimated(true, completion: { () -> Void in
-            self.urlImageActive = false
-            self.SelectedImage.image = image
-            self.saveOverrideImage(UIImageJPEGRepresentation(image, 1.0)!)
-            self.urlImageActive = true
-            self.ConfirmCancelButton.setTitle("Confirm", forState: .Normal)
-        })
+        if(self.allow)
+        {
+            self.dismissViewControllerAnimated(true, completion: { () -> Void in
+                self.urlImageActive = false
+                self.SelectedImage.image = image
+                self.saveOverrideImage(UIImageJPEGRepresentation(image, 1.0)!)
+                self.urlImageActive = true
+                self.ConfirmCancelButton.setTitle("Confirm", forState: .Normal)
+            })
+        }
     }
     @IBAction func UrlPressed(sender: AnyObject) {
         let alert = UIAlertController(title: "Web Image", message: "Provide URL to choose an image on the web.", preferredStyle: UIAlertControllerStyle.Alert)

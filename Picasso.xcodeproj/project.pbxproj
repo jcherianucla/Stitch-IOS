@@ -10,6 +10,7 @@
 		066992536BF368159259F81D /* Pods_PicassoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47D10343D857E988F324FD3F /* Pods_PicassoUITests.framework */; };
 		703CAA3B2E1B07DFFFE7A777 /* Pods_PicassoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812CF0B9FBBC8AD5A3D57B05 /* Pods_PicassoTests.framework */; };
 		B6094B761CD56DF100FEA5C5 /* GalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6094B751CD56DF100FEA5C5 /* GalleryCell.swift */; };
+		B6094B781CD5C3FA00FEA5C5 /* StitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6094B771CD5C3FA00FEA5C5 /* StitchViewController.swift */; };
 		E28938A61CD5188100A0E075 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28938A51CD5188100A0E075 /* AppDelegate.swift */; };
 		E28938A81CD5188100A0E075 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28938A71CD5188100A0E075 /* ViewController.swift */; };
 		E28938AB1CD5188100A0E075 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E28938A91CD5188100A0E075 /* Main.storyboard */; };
@@ -50,6 +51,7 @@
 		812CF0B9FBBC8AD5A3D57B05 /* Pods_PicassoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PicassoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB62C91FAEB54AEF29D565AF /* Pods-PicassoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PicassoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PicassoTests/Pods-PicassoTests.release.xcconfig"; sourceTree = "<group>"; };
 		B6094B751CD56DF100FEA5C5 /* GalleryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryCell.swift; sourceTree = "<group>"; };
+		B6094B771CD5C3FA00FEA5C5 /* StitchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StitchViewController.swift; sourceTree = "<group>"; };
 		CBBFFA5F278316431CF10331 /* Pods_Picasso.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Picasso.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E28938A21CD5188100A0E075 /* Picasso.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Picasso.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E28938A51CD5188100A0E075 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				E28938D91CD5310E00A0E075 /* PickImageViewController.swift */,
 				E28938D51CD5267E00A0E075 /* MergeImagesViewController.swift */,
 				E28938D71CD5268E00A0E075 /* FinishedMergingViewController.swift */,
+				B6094B771CD5C3FA00FEA5C5 /* StitchViewController.swift */,
 				E28938D31CD51E4400A0E075 /* GalleryTableViewController.swift */,
 				B6094B751CD56DF100FEA5C5 /* GalleryCell.swift */,
 				E28938AC1CD5188100A0E075 /* Assets.xcassets */,
@@ -256,7 +259,7 @@
 				TargetAttributes = {
 					E28938A11CD5188100A0E075 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = AUAX97LZ72;
+						DevelopmentTeam = A4NJS8B6F7;
 					};
 					E28938B51CD5188100A0E075 = {
 						CreatedOnToolsVersion = 7.2;
@@ -446,6 +449,7 @@
 				E28938D41CD51E4400A0E075 /* GalleryTableViewController.swift in Sources */,
 				B6094B761CD56DF100FEA5C5 /* GalleryCell.swift in Sources */,
 				E28938D81CD5268E00A0E075 /* FinishedMergingViewController.swift in Sources */,
+				B6094B781CD5C3FA00FEA5C5 /* StitchViewController.swift in Sources */,
 				E28938A81CD5188100A0E075 /* ViewController.swift in Sources */,
 				E28938DA1CD5310E00A0E075 /* PickImageViewController.swift in Sources */,
 				E28938A61CD5188100A0E075 /* AppDelegate.swift in Sources */,

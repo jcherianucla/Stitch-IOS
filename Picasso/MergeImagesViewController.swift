@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import AlamofireImage
+import Alamofire
+
+var outputImage = UIImage()
 
 class MergeImagesViewController: UIViewController {
     
@@ -18,13 +22,14 @@ class MergeImagesViewController: UIViewController {
     @IBOutlet var TopImage: UIImageView!
     var topImageActive: Bool = false
     var bottomImageActive: Bool = false
-
+    var activityView = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -78,7 +83,120 @@ class MergeImagesViewController: UIViewController {
         performSegueWithIdentifier("showImagePicker", sender: self)
     }
     @IBAction func MergePressed(sender: AnyObject) {
-        performSegueWithIdentifier("showMergedImage", sender: self)
+        if let selectedImage = retrieveSavedImage(true)
+        {
+            if retrieveSavedImage(false) != nil
+            {
+                postImage(1, imageStyle: 1, image: selectedImage)
+            }
+        }
+
+            //  performSegueWithIdentifier("showMergedImage", sender: self)
+    }
+    
+    func postImage(UID: Int, imageStyle: Int, image:UIImage)
+    {
+        let parameters = [
+            "id": "\(UID)",
+            "type" : "\(imageStyle)"
+        ]
+        
+        let URL = "http://54.89.149.163/upload"
+        
+        Alamofire.upload(.POST, URL, multipartFormData: {
+            multipartFormData in
+            
+            if let imageData = UIImageJPEGRepresentation(image, 0.5)
+            {
+                multipartFormData.appendBodyPart(data: imageData, name: "upload", fileName: "file.jpg", mimeType: "image/jpg")
+            }
+            
+            for (key, value) in parameters {
+                multipartFormData.appendBodyPart(data: value.dataUsingEncoding(NSUTF8StringEncoding)!, name: key)
+            }
+            
+            }, encodingCompletion: {
+                encodingResult in
+                
+                switch encodingResult {
+                    
+                case .Success(let upload, _, _):
+                    upload.responseJSON(completionHandler: { (response) in
+                        if(response.response?.statusCode == 200)
+                        {
+                            self.postSecondImage(1, imageStyle: 2, image: self.retrieveSavedImage(false)!)
+                        }
+                        debugPrint(response)
+                    })
+                    
+                case .Failure(let encodingError):
+                    print(encodingError)
+                }
+        })
+    }
+    
+    func postSecondImage(UID: Int, imageStyle: Int, image:UIImage)
+    {
+        let parameters = [
+            "id": "\(UID)",
+            "type" : "\(imageStyle)"
+        ]
+        
+        let URL = "http://54.89.149.163/upload"
+        
+        Alamofire.upload(.POST, URL, multipartFormData: {
+            multipartFormData in
+            
+            if let imageData = UIImageJPEGRepresentation(image, 0.5)
+            {
+                multipartFormData.appendBodyPart(data: imageData, name: "upload", fileName: "file.jpg", mimeType: "image/jpg")
+            }
+            
+            for (key, value) in parameters {
+                multipartFormData.appendBodyPart(data: value.dataUsingEncoding(NSUTF8StringEncoding)!, name: key)
+            }
+            
+            }, encodingCompletion: {
+                encodingResult in
+                
+                switch encodingResult {
+                    
+                case .Success(let upload, _, _):
+                    upload.responseJSON(completionHandler: { (response) in
+                        if(response.response?.statusCode == 200)
+                        {
+                            self.activityView.center = self.view.center
+                            self.activityView.startAnimating()
+                            self.view.addSubview(self.activityView)
+                            self.getImage()
+                        }
+                        debugPrint(response)
+                    })
+                    
+                case .Failure(let encodingError):
+                    print(encodingError)
+                }
+        })
+    }
+
+    func getImage()
+    {
+        Alamofire.request(.GET, "http://54.89.149.163/out.png").responseImage { (response) in
+            if(response.response?.statusCode == 200)
+            {
+                self.activityView.stopAnimating()
+                if let image = response.result.value
+                {
+                    print("image downloaded: \(image)")
+                    outputImage = image
+                    self.performSegueWithIdentifier("showMergedImage", sender: self)
+                    
+                }
+            } else {
+                self.getImage()
+                print("still getting image")
+            }
+        }
     }
     
 }
